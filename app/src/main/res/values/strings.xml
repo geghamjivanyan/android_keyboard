@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Arabic Keyboard</string>
+    <string name="arabic_keyboard_label">Arabic Keyboard</string>
+    <string name="simple_keyboard_label">Simple Button</string>
+    <string name="settings_instructions">To enable the keyboard:\n1. Go to Settings → System → Languages and input → On-screen keyboard\n2. Select "Manage keyboards"\n3. Enable "Arabic Keyboard"\n4. Confirm in the dialog box</string>
+    <string name="open_settings">Open Settings</string>
+</resources> 

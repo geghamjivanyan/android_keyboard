@@ -1,0 +1,25 @@
+R_DEF: Internal format may change without notice
+local
+dimen keyboard_height
+id instructionsTextView
+id keyboard_container
+id openSettingsButton
+id titleTextView
+layout activity_main
+layout keyboard_view
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string arabic_keyboard_label
+string open_settings
+string settings_instructions
+string simple_keyboard_label
+style IMETheme
+style Theme.PhonemicKeyboard
+xml arabic_method
+xml basic_method
+xml blue_method
+xml method
+xml red_method
+xml simple_method
+xml stable_method

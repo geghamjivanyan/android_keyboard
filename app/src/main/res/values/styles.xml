@@ -1,0 +1,14 @@
+<resources>
+    <style name="Theme.PhonemicKeyboard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Исправленная тема для IME сервисов -->
+    <style name="IMETheme" parent="@android:style/Theme.DeviceDefault.InputMethod">
+        <!-- Убираем проблемный атрибут windowGravity -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- Добавляем другие атрибуты, которые могут помочь -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>

@@ -1,0 +1,186 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.gegham.phoneimckeyboard"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Разрешение на интернет для API автодополнения -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:6:5-67
+12-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:6:22-64
+13
+14    <permission
+14-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+15        android:name="com.gegham.phoneimckeyboard.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+15-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+16        android:protectionLevel="signature" />
+16-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+17
+18    <uses-permission android:name="com.gegham.phoneimckeyboard.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+18-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+18-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+19
+20    <application
+20-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:8:5-55:19
+21        android:allowBackup="true"
+21-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:9:9-35
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.12.0] /Users/macbook/.gradle/caches/8.10.2/transforms/ab80fb921d888d63a7104e6ccf1d4e11/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+23        android:debuggable="true"
+24        android:extractNativeLibs="false"
+25        android:icon="@mipmap/ic_launcher"
+25-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:10:9-43
+26        android:label="@string/app_name"
+26-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:11:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:12:9-54
+28        android:supportsRtl="true"
+28-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:13:9-35
+29        android:theme="@style/Theme.AppCompat" >
+29-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:14:9-47
+30        <activity
+30-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:16:9-24:20
+31            android:name="com.gegham.phoneimckeyboard.MainActivity"
+31-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:17:13-41
+32            android:exported="true"
+32-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:18:13-36
+33            android:windowSoftInputMode="adjustResize" >
+33-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:19:13-55
+34            <intent-filter>
+34-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:20:13-23:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:21:17-69
+35-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:22:17-77
+37-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:22:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <!-- Арабская клавиатура без кастомной темы -->
+42        <service
+42-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:27:9-38:19
+43            android:name="com.gegham.phoneimckeyboard.ArabicKeyboardIME"
+43-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:28:13-46
+44            android:exported="true"
+44-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:31:13-36
+45            android:label="Arabic Keyboard"
+45-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:29:13-44
+46            android:permission="android.permission.BIND_INPUT_METHOD" >
+46-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:30:13-70
+47            <meta-data
+47-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:32:13-34:57
+48                android:name="android.view.im"
+48-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:33:17-47
+49                android:resource="@xml/arabic_method" />
+49-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:34:17-54
+50
+51            <intent-filter>
+51-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:35:13-37:29
+52                <action android:name="android.view.InputMethod" />
+52-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:36:17-67
+52-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:36:25-64
+53            </intent-filter>
+54        </service>
+55
+56        <!-- Простая клавиатура с добавленной темой -->
+57        <service
+57-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:41:9-53:19
+58            android:name="com.gegham.phoneimckeyboard.SimpleIME"
+58-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:42:13-38
+59            android:exported="true"
+59-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:46:13-36
+60            android:label="Simple Button"
+60-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:43:13-42
+61            android:permission="android.permission.BIND_INPUT_METHOD"
+61-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:44:13-70
+62            android:theme="@style/IMETheme" >
+62-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:45:13-44
+63            <meta-data
+63-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:32:13-34:57
+64                android:name="android.view.im"
+64-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:33:17-47
+65                android:resource="@xml/simple_method" />
+65-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:34:17-54
+66
+67            <intent-filter>
+67-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:35:13-37:29
+68                <action android:name="android.view.InputMethod" />
+68-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:36:17-67
+68-->/Users/macbook/Desktop/KEYFULL/keyboard_android-phonemic_v2 2/app/src/main/AndroidManifest.xml:36:25-64
+69            </intent-filter>
+70        </service>
+71
+72        <provider
+72-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+73            android:name="androidx.startup.InitializationProvider"
+73-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+74            android:authorities="com.gegham.phoneimckeyboard.androidx-startup"
+74-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+75            android:exported="false" >
+75-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+76            <meta-data
+76-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+77-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+78                android:value="androidx.startup" />
+78-->[androidx.emoji2:emoji2:1.2.0] /Users/macbook/.gradle/caches/8.10.2/transforms/c1ac66b4bc70bef23b65f17b17e4aec8/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/macbook/.gradle/caches/8.10.2/transforms/eb389c7574aa3fa618e23851522e3ec9/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+80-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/macbook/.gradle/caches/8.10.2/transforms/eb389c7574aa3fa618e23851522e3ec9/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+81                android:value="androidx.startup" />
+81-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/macbook/.gradle/caches/8.10.2/transforms/eb389c7574aa3fa618e23851522e3ec9/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+82            <meta-data
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+83                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+84                android:value="androidx.startup" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+85        </provider>
+86
+87        <receiver
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+88            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+89            android:directBootAware="false"
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+90            android:enabled="true"
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+91            android:exported="true"
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+92            android:permission="android.permission.DUMP" >
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+93            <intent-filter>
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+94                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+95            </intent-filter>
+96            <intent-filter>
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+97                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+98            </intent-filter>
+99            <intent-filter>
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+100                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+101            </intent-filter>
+102            <intent-filter>
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+103                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/macbook/.gradle/caches/8.10.2/transforms/821dc43ddc499af9eb31ed27a5b8b5ba/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+104            </intent-filter>
+105        </receiver>
+106    </application>
+107
+108</manifest>

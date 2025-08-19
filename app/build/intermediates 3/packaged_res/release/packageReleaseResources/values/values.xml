@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="keyboard_height">220dp</dimen>
+    <string name="app_name">Arabic Keyboard</string>
+    <string name="arabic_keyboard_label">Arabic Keyboard</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="settings_instructions">To enable the keyboard:\n1. Go to Settings → System → Languages and input → On-screen keyboard\n2. Select "Manage keyboards"\n3. Enable "Arabic Keyboard"\n4. Confirm in the dialog box</string>
+    <string name="simple_keyboard_label">Simple Button</string>
+    <style name="IMETheme" parent="@android:style/Theme.DeviceDefault.InputMethod">
+        
+        <item name="android:windowBackground">@android:color/transparent</item>
+        
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="Theme.PhonemicKeyboard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+    </style>
+</resources>
