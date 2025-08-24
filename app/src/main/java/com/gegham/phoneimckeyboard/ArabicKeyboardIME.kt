@@ -77,6 +77,17 @@ class ArabicKeyboardIME : InputMethodService() {
                     currentInputConnection?.commitText(" ", 1)
                 }
                 
+                // Apply transformation rules after deletion
+                val wholeText = currentInputConnection?.getTextBeforeCursor(1000, 0)?.toString()
+                if (wholeText != null && wholeText.isNotEmpty()) {
+                    val transformedText = textTransformer.convert(wholeText)
+                    if (transformedText != wholeText) {
+                        // Delete all text and insert transformed version
+                        currentInputConnection?.deleteSurroundingText(wholeText.length, 0)
+                        currentInputConnection?.commitText(transformedText, 1)
+                    }
+                }
+                
                 updateCurrentText()
                 // API calls disabled
                 // requestAutoComplete()
@@ -242,19 +253,44 @@ class ArabicKeyboardIME : InputMethodService() {
     
     // Обработка нажатия точки с трансформацией
     private fun handleDotTransformation() {
-        val lastChar = currentInputConnection?.getTextBeforeCursor(1, 0)?.toString()?.lastOrNull()
+        // Check for multi-character transformations first (up to 3 characters)
+        val lastThreeChars = currentInputConnection?.getTextBeforeCursor(3, 0)?.toString() ?: ""
         
-        if (lastChar != null) {
-            val replacement = dotTransformer.handleDotTransformation(lastChar)
-            
-            if (replacement != null) {
-                currentInputConnection?.deleteSurroundingText(1, 0)
-                currentInputConnection?.commitText(replacement, 1)
-            } else {
-                currentInputConnection?.commitText(".", 1)
-            }
+        // Try 3-character, 2-character, then 1-character transformations
+        var replacement: String? = null
+        var charsToDelete = 0
+        
+        if (lastThreeChars.length >= 3) {
+            replacement = dotTransformer.handleMultiCharTransformation(lastThreeChars.takeLast(3))
+            if (replacement != null) charsToDelete = 3
+        }
+        
+        if (replacement == null && lastThreeChars.length >= 2) {
+            replacement = dotTransformer.handleMultiCharTransformation(lastThreeChars.takeLast(2))
+            if (replacement != null) charsToDelete = 2
+        }
+        
+        if (replacement == null && lastThreeChars.isNotEmpty()) {
+            replacement = dotTransformer.handleDotTransformation(lastThreeChars.last())
+            if (replacement != null) charsToDelete = 1
+        }
+        
+        if (replacement != null) {
+            currentInputConnection?.deleteSurroundingText(charsToDelete, 0)
+            currentInputConnection?.commitText(replacement, 1)
         } else {
             currentInputConnection?.commitText(".", 1)
+        }
+        
+        // Apply transformation rules after dot transformation
+        val wholeText = currentInputConnection?.getTextBeforeCursor(1000, 0)?.toString()
+        if (wholeText != null && wholeText.isNotEmpty()) {
+            val transformedText = textTransformer.convert(wholeText)
+            if (transformedText != wholeText) {
+                // Delete all text and insert transformed version
+                currentInputConnection?.deleteSurroundingText(wholeText.length, 0)
+                currentInputConnection?.commitText(transformedText, 1)
+            }
         }
     }
     

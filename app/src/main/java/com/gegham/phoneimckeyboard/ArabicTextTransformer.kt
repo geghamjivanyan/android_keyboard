@@ -117,19 +117,95 @@ class ArabicTextTransformer {
         "عَمرُ" to "عَمرو"
     )
     
-    private var conversionRules: List<Pair<String, String>> = transformationMap
-        .toList()
-        .sortedByDescending { it.first.length }
+    private var conversionRules: List<Pair<String, String>> = transformationMap.toList()
 
     /**
      * Конвертирует текст применяя все правила преобразования
      */
     fun convert(text: String): String {
+        // Arabic character categories
+        val lunar = listOf('ء', 'ج', 'ح', 'خ', 'ه', 'ع', 'غ', 'ف', 'ق', 'ك', 'م', 'ل', 'ب', 'ي', 'و')
+        val solar = listOf('ث', 'ص', 'ض', 'ت', 'س', 'ش', 'ر', 'ز', 'د', 'ذ', 'ط', 'ظ')
+        val prefixes = listOf(" وَ", " فَ", " كَ", " لِ", " بِ", " أَ", " وَبِ", " كَبِ", " فَبِ", " أَبِ", " وَبِ", " كَلِ", " فَلِ", " أَلِ")
+        val vowels = listOf('َ', 'ُ', 'ِ')
+        
         var result = text
 
         // Применяем все правила преобразования
         for (rule in conversionRules) {
-            result = result.replace(rule.first, rule.second)
+            val patternLength = rule.first.length
+            
+            // Check only the last N characters where N is the pattern length
+            if (result.length >= patternLength) {
+                val lastNChars = result.takeLast(patternLength)
+                if (lastNChars == rule.first) {
+                    // Replace only the last N characters
+                    val beforeLastN = result.dropLast(patternLength)
+                    result = beforeLastN + rule.second
+                }
+            }
+        }
+
+        // Second part of algorithm: Process the last word
+        val words = result.split(" ")
+        if (words.isNotEmpty()) {
+            val lastWord = words.last()
+            
+            if (lastWord.isNotEmpty()) {
+                // Check if word starts with one of the prefix values
+                val hasPrefix = prefixes.any { lastWord.startsWith(it) }
+                
+                if (hasPrefix) {
+                    // Find the word without prefix
+                    val prefix = prefixes.find { lastWord.startsWith(it) } ?: ""
+                    val wordWithoutPrefix = lastWord.substring(prefix.length)
+                    
+                    if (wordWithoutPrefix.length >= 2) {
+                        val firstChar = wordWithoutPrefix[0]
+                        val secondChar = wordWithoutPrefix[1]
+                        
+                        // Check if both are consonants (not vowels)
+                        val firstIsConsonant = !vowels.contains(firstChar)
+                        val secondIsConsonant = !vowels.contains(secondChar)
+                        
+                        if (firstIsConsonant && secondIsConsonant) {
+                            var modifiedWord = wordWithoutPrefix
+                            
+                            if (firstChar == secondChar) {
+                                // Same consonants
+                                if (solar.contains(firstChar)) {
+                                    // Solar consonant - add ال
+                                    modifiedWord = "ال" + modifiedWord
+                                } else if (lunar.contains(firstChar)) {
+                                    // Lunar consonant - remove second consonant
+                                    modifiedWord = firstChar + modifiedWord.substring(2)
+                                }
+                            } else {
+                                // Different consonants - add ا
+                                modifiedWord = "ا" + modifiedWord
+                            }
+                            
+                            // Replace only the first vowel in the word
+                            val firstVowelIndex = modifiedWord.indexOfFirst { vowels.contains(it) }
+                            if (firstVowelIndex != -1) {
+                                val firstVowel = modifiedWord[firstVowelIndex]
+                                val replacement = when (firstVowel) {
+                                    'َ' -> 'ا'  // 064E -> 0627
+                                    'ُ' -> 'و'  // 064F -> 0648
+                                    'ِ' -> 'ي'  // 0650 -> 064A
+                                    else -> firstVowel
+                                }
+                                modifiedWord = modifiedWord.substring(0, firstVowelIndex) + replacement + modifiedWord.substring(firstVowelIndex + 1)
+                            }
+                            
+                            // Update the last word in result
+                            val newLastWord = prefix + modifiedWord
+                            val newWords = words.dropLast(1) + newLastWord
+                            result = newWords.joinToString(" ")
+                        }
+                    }
+                }
+            }
         }
 
         return result
@@ -164,7 +240,5 @@ class ArabicTextTransformer {
      */
     fun addRule(from: String, to: String) {
         conversionRules = conversionRules + Pair(from, to)
-        // Пересортировка для поддержания правильного порядка
-        conversionRules = conversionRules.sortedByDescending { it.first.length }
     }
 }

@@ -85,4 +85,11 @@ class ArabicDotTransformer {
         val lastCharStr = lastChar.toString()
         return dotTransformations[lastCharStr]
     }
+    
+    /**
+     * Обрабатывает трансформацию для нескольких символов в тексте
+     */
+    fun handleMultiCharTransformation(lastChars: String): String? {
+        return dotTransformations[lastChars]
+    }
 } 
