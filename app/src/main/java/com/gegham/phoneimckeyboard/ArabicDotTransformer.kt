@@ -39,17 +39,21 @@ class ArabicDotTransformer {
         (0x0646.toChar().toString()) to (0x062A.toChar().toString()),
 
         // No change group
+        ("\u0020\u064A") to ("\u0020\u0625\u0650\u0646"),
         (0x064A.toChar().toString()) to (0x064A.toChar().toString()),
         (0x0644.toChar().toString()) to (0x0644.toChar().toString()),
         (0x0645.toChar().toString()) to (0x0645.toChar().toString()),
         (0x0643.toChar().toString()) to (0x0643.toChar().toString()),
+
+        ("\u0020\u0648") to ("\u0020\u0623\u064F\u0646"),
         (0x0648.toChar().toString()) to (0x0648.toChar().toString()),
 
         // ف ↔ ق
         (0x0641.toChar().toString()) to (0x0642.toChar().toString()),
         (0x0642.toChar().toString()) to (0x0641.toChar().toString()),
 
-        // ا ↔ ى
+        // Space + ا → Space + أَن
+        ("\u0020\u0627") to ("\u0020\u0623\u064E\u0646"),
         (0x0627.toChar().toString()) to (0x0649.toChar().toString()),
 
         // ر ↔ ز
@@ -69,9 +73,9 @@ class ArabicDotTransformer {
         (0x0634.toChar().toString()) to (0x0633.toChar().toString()),
 
         // Vowel transformations
-        (0x064E.toChar().toString()) to (0x064B.toChar().toString()),
-        (0x064F.toChar().toString()) to (0x064C.toChar().toString()),
-        (0x0650.toChar().toString()) to (0x064D.toChar().toString())
+        (0x064E.toChar().toString()) to ("\u064B\u0627\u0020"),
+        (0x064F.toChar().toString()) to ("\u064C\u0020"),
+        (0x0650.toChar().toString()) to ("\u064D\u0020")
     )
 
     /**

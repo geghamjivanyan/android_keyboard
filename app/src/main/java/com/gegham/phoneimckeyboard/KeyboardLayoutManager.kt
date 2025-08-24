@@ -46,7 +46,7 @@ class KeyboardLayoutManager {
     val keyboard2: Array<Array<Key>> = arrayOf(
         arrayOf(
             Key(english = "a", arabic = "", color = Key.WHITE, action = KeyAction.DELETE),
-            Key(english = "b", arabic = "تشكيل", color = Key.BLUE, action = KeyAction.SWITCH_KEYBOARD),
+            Key(english = "b", arabic = "إهمال", color = Key.BLUE, action = KeyAction.SWITCH_KEYBOARD),
             Key(english = "c", arabic = "ل", color = Key.YELLOW),
             Key(english = "d", arabic = "ا", color = Key.RED),
             Key(english = "e", arabic = "و", color = Key.RED),
